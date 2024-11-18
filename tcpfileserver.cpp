@@ -8,6 +8,10 @@ TcpFileServer::TcpFileServer(QWidget *parent)
     fileNameSize = 0;
     serverProgressBar = new QProgressBar;
     serverStatusLabel = new QLabel(QStringLiteral("伺服器端就緒"));
+    ipLabel = new QLabel(QStringLiteral("IP:"));
+    portLabel = new QLabel(QStringLiteral("PORT:"));
+    ipLineEdit = new QLineEdit;
+    portLineEdit = new QLineEdit;
     startButton = new QPushButton(QStringLiteral("接收"));
     quitButton = new QPushButton(QStringLiteral("退出"));
     buttonBox = new QDialogButtonBox;
@@ -17,6 +21,10 @@ TcpFileServer::TcpFileServer(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(serverProgressBar);
     mainLayout->addWidget(serverStatusLabel);
+    mainLayout->addWidget(ipLabel);
+    mainLayout->addWidget(ipLineEdit);
+    mainLayout->addWidget(portLabel);
+    mainLayout->addWidget(portLineEdit);
     mainLayout->addStretch();
     mainLayout->addWidget(buttonBox);
     setLayout(mainLayout);
